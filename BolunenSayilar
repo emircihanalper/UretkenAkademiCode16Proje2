@@ -1,0 +1,95 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BolenleriBulma : MonoBehaviour
+{
+   void bolenleriBul (int ilksayi, int ikincisayi)
+    {        
+        ArrayList TumListe = new ArrayList ();
+        ArrayList ikiyeBolunenler = new ArrayList();
+        ArrayList uceBolunenler = new ArrayList();
+        ArrayList dordeBolunenler = new ArrayList();
+        ArrayList beseBolunenler = new ArrayList();
+
+        //tüm liste için
+        int sayi = ilksayi;
+        while(ikincisayi>=sayi)
+        {
+            TumListe.Add (sayi);
+            sayi++;
+        }
+        string listeString = "";
+        foreach (int i in TumListe)
+        {
+            listeString += " - " + i;
+        }
+        print("Tüm Liste Elemanları: " + listeString); 
+
+        //ikiye bölünebilenler için
+        foreach (int i in TumListe)
+        {
+            if (i%2 == 0)
+            {
+                ikiyeBolunenler.Add (i);
+            }
+        }
+        string ikililisteString = "";
+        foreach (int i in ikiyeBolunenler)
+        {
+            ikililisteString += " - " + i;
+        }
+        print("İkiye Bölünebilen Elemanları: " + ikililisteString);
+
+        //üçe bölünebilenler için
+        foreach (int i in TumListe)
+        {
+            if (i % 3 == 0)
+            {
+                uceBolunenler.Add(i);
+            }
+        }
+        string uclulisteString = "";
+        foreach (int i in uceBolunenler)
+        {
+            uclulisteString += " - " + i;
+        }
+        print("Üçe Bölünebilen Elemanları: " + uclulisteString);
+
+        //dörde bölünebilenler için
+        foreach (int i in TumListe)
+        {
+            if (i % 4 == 0)
+            {
+                dordeBolunenler.Add(i);
+            }
+        }
+        string dordlulisteString = "";
+        foreach (int i in dordeBolunenler)
+        {
+            dordlulisteString += " - " + i;
+        }
+        print("Dörde Bölünebilen Elemanları: " + dordlulisteString);
+
+        //beşe bölünebilenler için
+        foreach (int i in TumListe)
+        {
+            if (i % 5 == 0)
+            {
+                beseBolunenler.Add(i);
+            }
+        }
+        string beslilisteString = "";
+        foreach (int i in beseBolunenler)
+        {
+            beslilisteString += " - " + i;
+        }
+        print("Beşe Bölünebilen Elemanları: " + beslilisteString);
+
+    }
+
+    private void Start()
+    {
+        bolenleriBul(20, 44);
+    }
+}
